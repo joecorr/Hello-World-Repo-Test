@@ -77,6 +77,27 @@
       letter-spacing: 0.1em;
       opacity: 0.25;
     }
+
+    @keyframes border-pulse {
+      0%, 100% { opacity: 0.5; }
+      50%       { opacity: 1; }
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      padding: 1px;
+      background: linear-gradient(135deg, #7928ca, #0070f3, #00dfd8, #ff4ecd, #7928ca);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 9999;
+      animation: border-pulse 2.5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body>
