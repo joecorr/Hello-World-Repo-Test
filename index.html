@@ -79,8 +79,15 @@
     }
 
     @keyframes border-pulse {
-      0%, 100% { opacity: 0.5; }
-      50%       { opacity: 1; }
+      0%   { opacity: 0.1; }
+      4%   { opacity: 1; }
+      8%   { opacity: 0.15; }
+      13%  { opacity: 0.9; }
+      18%  { opacity: 0.1; }
+      45%  { opacity: 0.1; }
+      50%  { opacity: 0.75; }
+      55%  { opacity: 0.1; }
+      100% { opacity: 0.1; }
     }
 
     body::before {
@@ -88,7 +95,7 @@
       position: fixed;
       inset: 0;
       padding: 10px;
-      background: linear-gradient(135deg, #7928ca, #0070f3, #00dfd8, #ff4ecd, #7928ca);
+      background: linear-gradient(135deg, #ff00aa, #00aaff, #ff00aa);
       -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -96,7 +103,7 @@
       mask-composite: exclude;
       pointer-events: none;
       z-index: 9999;
-      animation: border-pulse 2.5s ease-in-out infinite;
+      animation: border-pulse 3.2s ease-in-out infinite;
     }
   </style>
 </head>
